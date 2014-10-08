@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:p="http://primefaces.org/ui">  
+<h:head>
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <title>Cadastro de Produtos e Embalagens - Cadastrar Produto</title>
+   <link href="estilos.css" rel="stylesheet" type="text/css" />
+</h:head>
+<h:body>
+   <h1>Cadastro de Produto</h1>
+   <hr />
+   <h:form id="form_cadastra_produto">
+      <!-- <h:messages /> -->
+      <h:panelGrid columns="3">
+         <h:outputLabel value="Descrição:" for="descricao" />
+         <h:inputText id="descricao" label="Descrição" value="#{ProdutoBean.descricao}" required="true" 
+                      requiredMessage="Descrição do produto deve ser informada." size="50" validatorMessage="Máximo de 50 caracteres para a descrição."
+                      styleClass="field">
+            <f:validateLength maximum="50" />
+         </h:inputText>
+         <h:message for="descricao" />
+         
+           <h:outputLabel for="unidadedecompra" value="Unidade de Compra:" />
+            <h:selectOneMenu id="unidadedecompra" value="#{ProdutoBean.unidadedecompra}" required="true">
+                <f:selectItem itemLabel="Selecione" itemValue="" />
+                <f:selectItems value="#{ProdutoBean.getListaUnidades()}" />
+            </h:selectOneMenu>
+            <h:outputText value="#{ProdutoBean.unidadedecompra}" />        
+
+         <h:outputLabel value="Pr. Custo:" for="precocusto" />
+         <h:inputText id="precocusto" label="Pr. Custo" value="#{ProdutoBean.precocusto}" 
+                      dir="RTL" styleClass="price" 
+                      converterMessage="Digite o preço de custo corretamente."
+                      title="Informe o preço de custo do produto.">
+            <f:convertNumber groupingUsed="true" maxFractionDigits="2" />
+         </h:inputText>
+         <h:message for="precocusto" />
+         
+         <h:outputLabel value="Pr. Venda:" for="precovenda" />
+         <h:inputText id="precovenda" label="Pr. Custo" value="#{ProdutoBean.precovenda}" 
+                      dir="RTL" styleClass="price" 
+                      converterMessage="Digite o preço de venda corretamente."
+                      title="Informe o preço de venda do produto.">
+            <f:convertNumber groupingUsed="true" maxFractionDigits="2" />
+         </h:inputText>
+         <h:message for="precovenda" />
+                  
+
+         <h:outputLabel value="Data Cadastro:" for="dtcadastro" />
+         <h:inputText id="dtcadastro" label="Data de cadastro:" value="#{ProdutoBean.dtcadastro}" 
+                      size="8" validatorMessage="Formato dd/mm/aaaa">
+            <f:convertDateTime pattern="dd/MM/yyyy" />
+         </h:inputText>
+         <h:message for="dtcadastro" />         
+
+         <h:outputText />
+         <h:commandButton action="#{ProdutoBean.salvaProduto}" value="Gravar" />
+         <h:commandButton action="#{ProdutoBean.cancela}" value="Cancelar" immediate="true" />
+         <!-- immediate - impede que o form seja submetido -->
+      </h:panelGrid>
+   </h:form>
+</h:body>
+</html>

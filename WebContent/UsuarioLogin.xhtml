@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/layout/template.xhtml">
+	<ui:define name="pageTitle">
+		<h:outputText value="Login" />
+	</ui:define>
+
+	<ui:define name="content">
+		<div style="border-bottom: 1px solid #E5E5E5;">
+			<h3>
+				<h:outputText value="Login" />
+
+			</h3>
+		</div>
+		    <p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
+		<p:panel header="C.P.E - Login"
+			style="width: 400; vertical-align: middle;">
+
+			<h:form>
+				<h:panelGrid columns="2" cellpadding="2"
+					style="vertical-align: middle;">
+					<h:outputLabel for="#{usuarioMB.usuario.login}" value="Login:" />
+					<h:inputText value="#{usuarioMB.usuario.login}" label="login"></h:inputText>
+					<h:outputLabel for="#{usuarioMB.usuario.senha}" value="Senha:" />
+					<h:inputSecret value="#{usuarioMB.usuario.senha}"></h:inputSecret>
+					<p:commandButton action="#{usuarioMB.efetuarLogin}" id="login"
+						icon="ui-icon-circle-check" title="Login" value="Entrar" />
+					<p:commandButton action="#{usuarioMB.registrar}" id="registrar"
+						icon="ui-icon-plusthick" title="Registre-se" value="Registrar-se" />
+				</h:panelGrid>
+			</h:form>
+		</p:panel>
+		<h:messages />
+	</ui:define>
+</ui:composition>
+</html>

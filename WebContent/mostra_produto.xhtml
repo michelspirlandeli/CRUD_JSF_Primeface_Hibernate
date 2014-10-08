@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <title>Cadastro de Produtos e Embalagens  - Produtos Cadastrados</title>
+   <link href="estilos.css" rel="stylesheet" type="text/css" />
+</h:head>
+<h:body> 
+   <h1>Produto cadastrado</h1>
+   <hr />
+
+   Descrição:     <h:outputText value="#{produto.descricao}" styleClass="title" /><br />
+
+   Unidade de Compra: <h:outputText value="#{produto.unidadedecompra}" /><br />
+
+   Cadastrado em: <h:outputText value="#{produto.dtcadastro}" styleClass="title">
+                  <f:convertDateTime pattern="dd/MM/yyyy" /></h:outputText><br />
+                  
+   Pr. Venda: <h:outputText value="#{produto.precovenda}" styleClass="price">
+                <f:convertNumber type="currency" /></h:outputText><br />
+             
+   Pr. Custo: <h:outputText value="#{produto.precocusto}" styleClass="price">
+               <f:convertNumber type="currency" /></h:outputText><br />
+                             
+   Observação: <h:outputText value="#{produto.observacao}" /><br />
+
+   <hr />
+   <h:form>
+      <h:commandLink action="cadastra_usuario" value="Novo usuário" />
+   </h:form>
+</h:body>
+</html>

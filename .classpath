@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/eclipselink.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/hibernate-annotations-3.4.0.GA.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/hibernate-commons-annotations-3.3.0.ga.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/hibernate-core-3.3.1.GA.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/hibernate-entitymanager-3.4.0.GA.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/hibernate-validator-3.1.0.GA.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/javassist-3.9.0.GA.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/javax.ejb-api-3.2.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/javax.persistence_2.1.0.v201304241213.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/jsf-api-2.2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/jsf-impl-2.2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/postgresql-8.2-506.jdbc3.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/primefaces-5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/slf4j-simple-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/ui-lightness-1.0.10.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Tomcat/api/antlr-4.2.1-complete.jar"/>
+	<classpathentry kind="lib" path="C:/Tomcat/bin/servlet-api.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

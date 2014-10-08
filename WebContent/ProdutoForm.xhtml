@@ -1,0 +1,109 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form styleClass="form-horizontal">
+		<fieldset>
+			<legend>
+				<h3>
+					<p:outputLabel value="Produtos" />
+					<small> <p:outputLabel value="Gerenciar Produto" /></small>
+				</h3>
+			</legend>
+			<div class="control-group">
+				<label class="control-label"><h:outputText value="Descrição" /></label>
+				<div class="controls">
+					<h:inputText value="#{produtoMB.produto.descricao}"
+						label="Descrição" required="true" styleClass="input-large">
+						<f:validateLength minimum="5" maximum="60" />
+					</h:inputText>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label"><h:outputText
+						value="Un. Compra" /></label>
+				<div class="controls">
+					<p:selectOneMenu id="btnSelect"
+						value="#{produtoMB.produto.unidadedecompra}"
+						onchange="$('#form').submit()">
+						<f:selectItems value="#{produtoMB.produto.listaUnidades}" />
+					</p:selectOneMenu>
+				</div>
+			</div>
+
+
+			<div class="control-group">
+				<label class="control-label"><h:outputText value="Pr. Custo" /></label>
+				<div class="controls">
+					<p:inputText value="#{produtoMB.produto.precocusto}"
+						label="Pr. Custo" required="true" styleClass="input-small">
+						<f:convertNumber minFractionDigits="2" />
+						<f:validateDoubleRange minimum="1" />
+					</p:inputText>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label"><h:outputText value="Pr. Venda" /></label>
+				<div class="controls">
+					<h:inputText value="#{produtoMB.produto.precovenda}"
+						label="Pr. Venda" required="true" styleClass="input-small">
+						<f:convertNumber minFractionDigits="2" />
+						<f:validateDoubleRange minimum="1" />
+					</h:inputText>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label"><h:outputText
+						value="Observação" /></label>
+				<div class="controls">
+					<h:inputText value="#{produtoMB.produto.observacao}"
+						label="Observação" required="true" styleClass="input-large">
+						<f:validateLength minimum="5" maximum="60" />
+					</h:inputText>
+				</div>
+			</div>
+
+
+		</fieldset>
+
+		<div class="control-group">
+			<div class="controls">
+				<p:commandButton value="Salvar" action="#{produtoMB.salvar}"
+					styleClass="btn btn-success" onclick="dlg.show();"
+					oncomplete="dlg.hide();" rendered="#{produtoMB.produto != null}" />
+				<p:button value="Cancelar" outcome="ProdutoListar" styleClass="btn" />
+
+
+				<p:commandButton value="Excluir" styleClass="btn btn-danger"
+					rendered="#{produtoMB.produto.id != null}" immediate="true"
+					action="#{produtoMB.remover}">
+					<p:confirm header="Confirmation"
+						message="Deseja realmente excluir o produto?" icon="ui-icon-alert" />
+					<p:confirmDialog global="true" showEffect="fade"
+						hideEffect="explode">
+						<p:commandButton value="Sim" type="button" immediate="true"
+							styleClass="ui-confirmdialog-yes" icon="ui-icon-check"
+							update="@form" />
+						<p:commandButton value="Não" type="button"
+							styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+					</p:confirmDialog>
+				</p:commandButton>
+
+			</div>
+		</div>
+
+		<p:dialog id="dialog" header="Executando.." widgetVar="dlg"
+			dynamic="true" modal="true">
+			<h:outputText value="Aguarde.." />
+		</p:dialog>
+
+
+		<p:messages id="messages" showDetail="false" autoUpdate="true"
+			closable="true" />
+	</h:form>
+</ui:fragment>
